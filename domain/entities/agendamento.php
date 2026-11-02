@@ -1,6 +1,7 @@
 <?php
 
-class Agendamento {
+class Agendamento
+{
 
     public int $numAgendamento;
     public DateTime $tAgendamento;
@@ -20,14 +21,16 @@ class Agendamento {
         DateTime $criadoEm,
         string $clienteId,
         string $precoTotal = '0.00',
-        ?tipoAgendamentoEnum $status = null
+        ?int $status = null
     ) {
         $this->numAgendamento = $numAgendamento;
         $this->tAgendamento = $tAgendamento;
         $this->criadoEm = $criadoEm;
         $this->clienteId = $clienteId;
         $this->precoTotal = $precoTotal;
-        $this->status = $status ?? tipoAgendamentoEnum::PENDENTE; // se o status não for fornecido, define como PENDENTE por padrão
+        $this->status = $status ?? tipoAgendamentoEnum::PENDENTE;
+
+    }// se o status não for fornecido, define como PENDENTE por padrão
 
 
 
